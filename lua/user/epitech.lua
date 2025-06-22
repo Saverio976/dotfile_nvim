@@ -1,3 +1,4 @@
+-- https://github.com/HelifeWasTaken/vim-epitech/blob/master/epitech.vim
 vim.cmd([[
 if (&ft == 'c') || (&ft == 'cpp')
     setlocal comments=s:/*,m:**,ex:*/
@@ -16,7 +17,7 @@ let s:comMapNoShebang = {
             \ 'css': {'b': '/*', 'm': '**', 'e': '*/'},
             \ 'pov': {'b': '//', 'm': '//', 'e': '//'},
             \ 'pascal': {'b': '{ ', 'm': '   ', 'e': '}'},
-            \ 'haskell': {'b': '{-', 'm': '-- ', 'e': '-}'},
+            \ 'haskell': {'b': '{-', 'm': '--', 'e': '-}'},
             \ 'vim': {'b': '""', 'm': '"" ', 'e': '""'},
             \}
 
