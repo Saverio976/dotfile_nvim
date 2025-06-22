@@ -70,7 +70,7 @@ opt.inccommand = 'split'
 opt.showmatch = true
 
 -- default shell
-if fn.has('win32') then
+if fn.has('win32') == 1 then
     if fn.executable('powershell.exe') then
         vim.opt.shell = 'powershell.exe'
         opt.shellcmdflag = '-command'
