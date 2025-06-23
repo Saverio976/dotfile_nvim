@@ -4,30 +4,65 @@ local actions = require("telescope.actions")
 
 local fb_actions = telescope.extensions.file_browser.actions
 
-local vimgrep_arguments = {
-    'grep',
+-- vimgrep_arguments
 
-    '--color=never',
-    '--dereference-recursive', -- recurse subdirectory
-    '--with-filename', -- show filename
-    '--line-number', -- show line number
-    '-b', -- show byte offset from start,
-          -- this is not telescope want, but it shows the line, and when
-          -- the line is selected, it goes to the last character of the line
-          -- because it is out of column
+local vimgrep_arguments = {}
 
-    '--binary-files=without-match',
-    '--exclude-dir=.bzr',
-    '--exclude-dir=.CVS',
-    '--exclude-dir=.git',
-    '--exclude-dir=.hg',
-    '--exclude-dir=.svn',
-    '--exclude-dir=.idea',
-    '--exclude-dir=.tox',
-    '--exclude-dir=__pycache__',
-    '--exclude-dir=node_modules',
-    '--exclude-dir=.gradle'
-}
+if vim.fn.has('win32') == 1 then
+    vimgrep_arguments = {}
+else
+    vimgrep_arguments = {
+        'grep',
+
+        '--color=never',
+        '--dereference-recursive', -- recurse subdirectory
+        '--with-filename', -- show filename
+        '--line-number', -- show line number
+        '-b', -- show byte offset from start,
+            -- this is not telescope want, but it shows the line, and when
+            -- the line is selected, it goes to the last character of the line
+            -- because it is out of column
+
+        '--binary-files=without-match',
+        '--exclude-dir=.bzr',
+        '--exclude-dir=.CVS',
+        '--exclude-dir=.git',
+        '--exclude-dir=.hg',
+        '--exclude-dir=.svn',
+        '--exclude-dir=.idea',
+        '--exclude-dir=.tox',
+        '--exclude-dir=__pycache__',
+        '--exclude-dir=node_modules',
+        '--exclude-dir=.gradle'
+    }
+end
+
+-- find_command
+
+local find_command = {}
+
+if vim.fn.has('win32') == 1 then
+    find_command = {
+        'Get-ChildItem',
+
+        '-Recurse',
+        '-Name',
+        '-Force',
+        '-Exclude',
+        '.git',
+    }
+else
+    find_command = {
+        'find',
+
+        '.',
+        '(',
+        '!', '-path', '*/.git/*',
+        '-and',
+        '-type', 'f',
+        ')'
+    }
+end
 
 telescope.setup({
     defaults = {
@@ -78,7 +113,7 @@ telescope.setup({
     },
     pickers = {
         find_files = {
-            find_command = { 'find', '.', '(', '!', '-path', '*/.git/*', '-and', '-type', 'f', ')' }
+            find_command = find_command,
         },
     },
 })
