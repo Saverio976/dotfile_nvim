@@ -4,12 +4,19 @@ local actions = require("telescope.actions")
 
 local fb_actions = telescope.extensions.file_browser.actions
 
+local path_config_script = vim.fn.stdpath('config') .. '\\scripts\\'
+
 -- vimgrep_arguments
 
 local vimgrep_arguments = {}
 
 if vim.fn.has('win32') == 1 then
-    vimgrep_arguments = {}
+    vimgrep_arguments = {
+        path_config_script .. 'run.bat',
+        path_config_script .. 'grep.ps1',
+
+        '-Pattern',
+    }
 else
     vimgrep_arguments = {
         'grep',
@@ -43,13 +50,8 @@ local find_command = {}
 
 if vim.fn.has('win32') == 1 then
     find_command = {
-        'Get-ChildItem',
-
-        '-Recurse',
-        '-Name',
-        '-Force',
-        '-Exclude',
-        '.git',
+        path_config_script .. 'run.bat',
+        path_config_script .. 'find.ps1',
     }
 else
     find_command = {
