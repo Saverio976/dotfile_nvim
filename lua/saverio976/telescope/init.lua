@@ -50,8 +50,6 @@ local find_command = {}
 
 if vim.fn.has('win32') == 1 then
     find_command = {
-        path_config_script .. 'run.bat',
-        path_config_script .. 'find.ps1',
     }
 else
     find_command = {

@@ -1,7 +1,7 @@
 local km_set = vim.keymap.set
 
 km_set('n', '<leader>f',
-    '<cmd>Telescope find_files<cr>',
+    '<cmd>Telescope file_browser depth=3 auto_depth=true add_dirs=false<cr>',
     { desc = 'Telescope find_files', noremap = true, silent = true }
 )
 
@@ -21,6 +21,6 @@ km_set('n', 'th',
 )
 
 km_set('n', 'tf',
-    '<cmd>Telescope file_browser<cr>',
+    '<cmd>Telescope file_browser depth=3<cr>',
     { desc = 'Telescope help_tags', noremap = true, silent = true }
 )
