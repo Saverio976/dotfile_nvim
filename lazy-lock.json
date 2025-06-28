@@ -10,7 +10,7 @@
   "nvim-lspconfig": { "branch": "master", "commit": "6bba673aa8993eceec233be17b42ddfb9540794b" },
   "nvim-web-devicons": { "branch": "master", "commit": "19d6211c78169e78bab372b585b6fb17ad974e82" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
-  "telescope-cross-live-grep.nvim": { "branch": "master", "commit": "8d331d3f8ccf63df8145e99e3a5ae5b74c5810dc" },
+  "telescope-cross-live-grep.nvim": { "branch": "master", "commit": "c1dcba173722043591e34eae958f7ac4977adcab" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "7bf55ed0ff5be182ad3301cff266581fc1c56cce" },
   "telescope.nvim": { "branch": "master", "commit": "b4da76be54691e854d3e0e02c36b0245f945c2c7" },
   "undotree": { "branch": "main", "commit": "eab459ab87dd249617b5f7187bb69e614a083047" },
