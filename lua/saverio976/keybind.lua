@@ -41,3 +41,8 @@ km_set('n', '<leader>a',
     [[:execute "normal! g`\""<cr>]],
     { silent = true, noremap = true, desc = 'go where cursor was before least leave' }
 )
+
+vim.cmd([[
+aunmenu PopUp.How-to\ disable\ mouse
+aunmenu PopUp.-2-
+]])

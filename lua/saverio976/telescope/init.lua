@@ -119,5 +119,6 @@ telescope.setup({
 })
 
 telescope.load_extension('file_browser')
+telescope.load_extension('cross_live_grep')
 
 require('saverio976.telescope.keybind')

@@ -56,7 +56,7 @@ lazy.setup({
         'nvim-telescope/telescope.nvim',
         lazy = true,
         cmd = 'Telescope',
-        keys = { 'tf', 'tb', 'tg', '<leader>f' },
+        keys = { 'tf', 'tb', 'tg', '<leader>f', 'th' },
         dependencies = {
             {
                 'nvim-tree/nvim-web-devicons',
@@ -64,6 +64,10 @@ lazy.setup({
             },
             {
                 'nvim-telescope/telescope-file-browser.nvim',
+                dependencies = { 'nvim-lua/plenary.nvim' }
+            },
+            {
+                'Saverio976/telescope-cross-live-grep.nvim',
                 dependencies = { 'nvim-lua/plenary.nvim' }
             },
         },

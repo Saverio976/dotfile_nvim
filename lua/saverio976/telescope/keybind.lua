@@ -6,8 +6,8 @@ km_set('n', '<leader>f',
 )
 
 km_set('n', 'tg',
-    '<cmd>Telescope live_grep<cr>',
-    { desc = 'Telescope live_grep', noremap = true, silent = true }
+    '<cmd>Telescope cross_live_grep<cr>',
+    { desc = 'Telescope cross_live_grep', noremap = true, silent = true }
 )
 
 km_set('n', 'tb',
