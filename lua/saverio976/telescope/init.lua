@@ -12,10 +12,6 @@ local vimgrep_arguments = {}
 
 if vim.fn.has('win32') == 1 then
     vimgrep_arguments = {
-        path_config_script .. 'run.bat',
-        path_config_script .. 'grep.ps1',
-
-        '-Pattern',
     }
 else
     vimgrep_arguments = {
@@ -109,6 +105,9 @@ telescope.setup({
                     -- your custom normal mode mappings
                 },
             },
+        },
+        cross_live_grep = {
+            use_fastest = true,
         },
     },
     pickers = {
