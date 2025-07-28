@@ -1,7 +1,15 @@
+local telescope = require('telescope')
 local km_set = vim.keymap.set
 
-km_set('n', '<leader>f',
-    '<cmd>Telescope file_browser depth=3 auto_depth=true add_dirs=false hidden=true<cr>',
+km_set('n', '<leader>f', function()
+        telescope.extensions.file_browser.file_browser({
+            depth=3,
+            auto_depth=true,
+            add_dirs=false,
+            hidden=true,
+            respect_gitignore=true,
+        })
+    end,
     { desc = 'Telescope find_files', noremap = true, silent = true }
 )
 
